@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">Moviles 1</string>
+    <string name="first_partial">Primer Parcial</string>
+    <string name="second_partial">Segundo Parcial</string>
+    <string name="third_partial">Tercer Parcial</string>
+    <string name="padel_score">Padel Puntos</string>
+    <string name="even_or_odd">Par o Non</string>
+
+
+
+</resources>
