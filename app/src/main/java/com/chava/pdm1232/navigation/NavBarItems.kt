@@ -1,8 +1,11 @@
-package com.chava.pdm1232
+package com.chava.pdm1232.navigation
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Face
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Star
+import com.chava.pdm1232.R
+import com.chava.pdm1232.navigation.BarItem
 
 
 /**
@@ -11,17 +14,17 @@ import androidx.compose.material.icons.filled.Star
 object NavBarItems {
     val NavBarItems= listOf(
         BarItem(
-            title = "Primer Parcial",
+            title = R.string.first_partial,
             image = Icons.Filled.Home,
             route = "firstPartial"
         ),
         BarItem(
-            title = "Segundo Parcial",
-            image = Icons.Filled.Home,
+            title = R.string.second_partial,
+            image = Icons.Filled.Face,
             route = "secondPartial"
         ),
         BarItem(
-            title = "Tercer Parcial",
+            title = R.string.third_partial,
             image = Icons.Filled.Star,
             route = "thirdPartial"
 

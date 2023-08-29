@@ -8,15 +8,17 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
-import androidx.navigation.NavHost
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.chava.pdm1232.navigation.NavBarItems
+import com.chava.pdm1232.navigation.NavRoutes
 import com.chava.pdm1232.ui.theme.PDM1232Theme
 
 class MainActivity : ComponentActivity() {
@@ -29,7 +31,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                      MainScreen()
+                    MainScreen()
                 }
             }
         }
@@ -37,40 +39,46 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun MainScreen(){
-    val navController= rememberNavController()
-Scaffold(
-    topBar= { TopAppBar(title = { Text("ULSA CHIHUAHUA")}) },
-    content = {it
-    NavigationHost(navController= navController)},
-    bottomBar = {BottomNavigationBar(navController=navController)}
-      )
-    }
+fun MainScreen() {
+    val navController = rememberNavController()
+    Scaffold(
+        topBar = { TopAppBar(title = { Text("ULSA CHIHUAHUA") }) },
+        content = {
+            it
+            NavigationHost(navController = navController)
+        },
+        bottomBar = { BottomNavigationBar(navController = navController) }
+    )
+}
 
 /**
  * Esta funcion sera encargada de manejar los tabs de la aplicacion
  */
 @Composable
-fun NavigationHost(navController: NavHostController){
+fun NavigationHost(navController: NavHostController) {
     NavHost(
-        navController= navController,
+        navController = navController,
         startDestination = NavRoutes.firstPartial.route
 
-    ){
-       composable(NavRoutes.firstPartial.route){
-                  FirstPartial()
-       }
-        composable(NavRoutes.secondPartial.route){
+    ) {
+        composable(NavRoutes.firstPartial.route) {
+            FirstPartialView(navController = navController)
+
 
         }
-        composable(NavRoutes.thirdPartial.route){
+        composable(NavRoutes.secondPartial.route) {
+            SecondPartialView()
+
+        }
+        composable(NavRoutes.thirdPartial.route) {
+            ThirdPartialView()
 
         }
     }
 
 
-
 }
+
 @Composable
 fun BottomNavigationBar(navController: NavHostController) {
     BottomNavigation {
@@ -86,17 +94,20 @@ fun BottomNavigationBar(navController: NavHostController) {
 
                         }
                         launchSingleTop = true
-                        restoreState=true
+                        restoreState = true
 
 
                     }
                 },
                 icon = {
-                    Icon(imageVector = navItem.image,
-                    contentDescription = navItem.title)
+                    Icon(
+                        imageVector = navItem.image,
+                        contentDescription = navItem.title.toString()
+                    )
                 },
                 label = {
-                    Text(text = navItem.title)
+                    Text(text = stringResource(id = navItem.title))
+
 
                 },
             )
@@ -108,7 +119,7 @@ fun BottomNavigationBar(navController: NavHostController) {
 @Composable
 fun DefaultPreview() {
     PDM1232Theme {
-       MainScreen()
+        MainScreen()
 
     }
 }

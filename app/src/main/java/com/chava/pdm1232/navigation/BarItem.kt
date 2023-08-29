@@ -1,4 +1,4 @@
-package com.chava.pdm1232
+package com.chava.pdm1232.navigation
 
 import android.icu.text.CaseMap.Title
 import android.media.Image
@@ -9,7 +9,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
  */
 data class BarItem(
     //Titulo de la opcion
-val title: String,
+val title: Int,
 // Icono de la opcion del menu
 val image: ImageVector,
 // Ruta a la cual se va a dirigir la opcion
