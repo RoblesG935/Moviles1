@@ -10,6 +10,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
@@ -17,6 +18,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.chava.pdm1232.firstpartial.*
 import com.chava.pdm1232.navigation.NavBarItems
 import com.chava.pdm1232.navigation.NavRoutes
 import com.chava.pdm1232.ui.theme.PDM1232Theme
@@ -74,10 +76,39 @@ fun NavigationHost(navController: NavHostController) {
             ThirdPartialView()
 
         }
+        composable(NavRoutes.PadelScore.route) {
+            PadelScoreView(navController = navController)
+
+        }
+        composable(NavRoutes.ParoNon.route) {
+            EvenOrOddView(navController = navController, viewModel = EvenOrOddViewModel())
+
+        }
+        composable(NavRoutes.Cards.route) {
+            CardsView(navController = navController, viewModel = CardsViewModel())
+
+
+        }
+        composable(NavRoutes.Minor.route) {
+            MinorView(navController = navController, viewModel = MinorViewModel())
+
+        }
+        composable(NavRoutes.Barber.route){
+            BarberView(navController = navController, viewModel =BarberViewModel() )
+
+        }
+        composable(NavRoutes.apple.route){
+          FirstParcialTestView(navController= navController, viewModel = FirstParcialTestViewModel())
+
+
+
+        }
+
+
     }
 
-
 }
+
 
 @Composable
 fun BottomNavigationBar(navController: NavHostController) {

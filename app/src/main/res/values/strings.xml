@@ -5,5 +5,26 @@
     <string name="third_partial">Third Parcial</string>
     <string name="padel_score">Padel Score</string>
     <string name="even_or_odd">Even or Odd</string>
+    <string name="cards">Cards</string>
+    <string name="minor">Minor</string>
+    <string name="barber">Barber</string>
+    <string name="hide">Hide</string>
+    <string name="random">Random</string>
+    <string name="question">¿How will be the minor?</string>
+    <string name="consult">Consult</string>
+    <string name="theminor">The Minor Number is </string>
+    <string name="price">Price $150</string>
+    <string name="price2">Price $120</string>
+    <string name="price3">Price $270</string>
+    <string name="apple">FirstParcialTest</string>
+
+
+
+
+
+
+
+
+
 
 </resources>

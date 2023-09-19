@@ -10,7 +10,8 @@ import com.chava.pdm1232.R
 @Composable
 fun PadelScoreView(navController: NavController){
     Column {
-        Text(text = stringResource(id = R.string.padel_score))
+        Text(text = stringResource(id =R.string.padel_score))
+
 
     }
 }

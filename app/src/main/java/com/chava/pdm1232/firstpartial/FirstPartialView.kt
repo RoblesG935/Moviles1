@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 
 @Composable
-fun FirstPartialView(navController:NavController) {
+fun FirstPartialView(navController: NavController) {
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -25,7 +25,8 @@ fun FirstPartialView(navController:NavController) {
                 .fillMaxWidth() // Fill the available width
                 .padding(16.dp) // Add padding
         ) {
-            Text(text = "Padel Score")
+            Text(text = stringResource(id = R.string.padel_score))
+
         }
         Button(
             onClick = { navController.navigate(route = "evenorodd") },
@@ -36,9 +37,51 @@ fun FirstPartialView(navController:NavController) {
             Text(text = stringResource(id = R.string.even_or_odd))
 
 
+        }
+        Button(
+            onClick = { navController.navigate(route = "cards") },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+
+        )
+        {
+            Text(text = stringResource(id = R.string.cards))
+
 
         }
+        Button(
+            onClick = { navController.navigate(route = "minor") },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+
+        )
+        {
+            Text(text = stringResource(id = R.string.minor))
 
 
+        }
+        Button(
+            onClick = { navController.navigate(route = "barber") },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+
+        )
+        {
+            Text(text = stringResource(id = R.string.barber))
+
+        }
+        Button(
+            onClick = { navController.navigate(route = "apple") },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+
+        )
+        {
+            Text(text = stringResource(id = R.string.apple))
+        }
     }
 }
